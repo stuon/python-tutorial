@@ -1,6 +1,8 @@
 import pytest
 import pdb
 
+# Problem
+# determine if two strings are an anagram. Ignore spaces and case in-sensitive
 def anagram_native(s1, s2):
 
     s1 = s1.replace(' ', '').lower()
@@ -8,6 +10,9 @@ def anagram_native(s1, s2):
 
     return sorted(s1) == sorted(s2)
 
+# 2N + 1 + 3N
+# 4N
+# N
 def anagram_count(s1, s2):
 
     s1 = s1.replace(' ', '').lower()
@@ -36,6 +41,9 @@ def anagram_count(s1, s2):
 
     return True
 
+# 2N + 1 + N^2 + N
+# N + N^2
+# N^2
 def anagram(s1, s2):
 
     s1 = s1.replace(' ', '').lower()
