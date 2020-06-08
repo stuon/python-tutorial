@@ -10,9 +10,9 @@ def anagram_native(s1, s2):
 
     return sorted(s1) == sorted(s2)
 
-# 2N + 1 + 3N
-# 4N
-# N
+# O(1) + O(NLogN) + O(NLogN) + O(NLogN)
+# O(1) + O(4NLogN)
+# O(NLogN)
 def anagram_count(s1, s2):
 
     s1 = s1.replace(' ', '').lower()
