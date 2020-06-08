@@ -2,7 +2,7 @@ import pytest
 
 # Problem
 # Given an integer array, output all the unique pairs that sum up to a specific value K
-# includes negatives and postive numbers and zeros
+# includes negatives and positive numbers and zeros
 
 # O(N), as set() is O(1)
 def pair_sum_set(array,k):
