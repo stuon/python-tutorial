@@ -6,7 +6,7 @@ import collections
 # Overflow issue
 
 # N + NLogN + N 
-# O(N) 
+# O(NLogN) 
 def finder_dict(arr1, arr2):
 
     count = {}
@@ -30,7 +30,7 @@ def finder_dict(arr1, arr2):
     return None
 
 # N + NLogN + N 
-# O(N) 
+# O(NLogN) 
 def finder_hash(arr1, arr2):
     count = collections.defaultdict(int)
 
@@ -61,22 +61,22 @@ def finder_sort(arr1,arr2):
     return None
 
 # if zero is not present
+# O(2N)
 def finder_xor(arr1,arr2):
     result = 0
 
     for num in arr1+arr2:
-        result!=num
+        result^=num
 
     if result != 0:
-        print(f"{result} is the missing number")
         return result
 
     return None
 
 def test_finder_dict():
-    assert(5 == finder_hash([1,2,3,4,5,6,7],[3,7,2,1,4,6]))
-    assert(5 == finder_hash([5,5,7,7],[5,7,7]))
-    assert(finder_hash([5,5,7,7],[5,5,7,7]) is None)
+    assert(5 == finder_dict([1,2,3,4,5,6,7],[3,7,2,1,4,6]))
+    assert(5 == finder_dict([5,5,7,7],[5,7,7]))
+    assert(finder_dict([5,5,7,7],[5,5,7,7]) is None)
 
 def test_finder_sort():
     assert(5 == finder_sort([1,2,3,4,5,6,7],[3,7,2,1,4,6]))
@@ -89,6 +89,6 @@ def test_finder_hash():
     assert(finder_hash([5,5,7,7],[5,5,7,7]) is None)
 
 def test_finder_xor():
-    assert(5 == finder_hash([1,2,3,4,5,6,7],[3,7,2,1,4,6]))
-    assert(5 == finder_hash([5,5,7,7],[5,7,7]))
-    assert(finder_hash([5,5,7,7],[5,5,7,7]) is None)
+    assert(5 == finder_xor([1,2,3,4,5,6,7],[3,7,2,1,4,6]))
+    assert(5 == finder_xor([5,5,7,7],[5,7,7]))
+    assert(finder_xor([5,5,7,7],[5,5,7,7]) is None)
