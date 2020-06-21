@@ -29,8 +29,8 @@ def finder_dict(arr1, arr2):
 
     return None
 
-# N + NLogN + N 
-# O(NLogN) 
+# O(2n)
+# O(N)
 def finder_hash(arr1, arr2):
     count = collections.defaultdict(int)
 
